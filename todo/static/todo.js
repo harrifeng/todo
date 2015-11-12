@@ -27,15 +27,15 @@ function TaskCtrl($scope, $http) {
         refresh().then(function() {
           $scope.working = false;
           $scope.todoText = '';
-        })
+        });
       });
   };
 
   $scope.toggleDone = function(task) {
-    data = {ID: task.ID, Title: task.Title, Done: !task.Done}
+      data = {ID: task.ID, Title: task.Title, Done: !task.Done};
     $http.put('/task/'+task.ID, data).
       error(logError).
-      success(function() { task.Done = !task.Done });
+          success(function() { task.Done = !task.Done; });
   };
 
   refresh().then(function() { $scope.working = false; });
