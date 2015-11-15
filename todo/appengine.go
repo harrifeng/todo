@@ -18,7 +18,7 @@
 // restarted at any time and all tasks would be lost.
 package todo
 
-import "github.com/campoy/todo/server"
+import "github.com/harrifeng/todo/server"
 
 func init() {
 	server.RegisterHandlers()
